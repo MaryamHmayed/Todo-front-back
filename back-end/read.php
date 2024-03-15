@@ -6,9 +6,7 @@ $user_id=$_POST["user_id"];
 
 
 
-
-
-$query=$mysqli->prepare( "SELECT * FROM todo_list WHERE user_id=?");
+$query=$mysqli->prepare( "SELECT * FROM tasks WHERE user_id=?");
 $query->bind_param('i',$user_id);
 $query->execute();
 $query->store_result();
