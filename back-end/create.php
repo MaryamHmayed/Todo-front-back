@@ -6,7 +6,7 @@ $user_id = $_POST["user_id"];
 $description = $_POST["description"]; 
 
 
-$query = $mysqli->prepare("INSERT INTO tasks (description, user_id) VALUES (?, ?)");
+$query = $mysqli->prepare("insert into tasks (description,user_id) VALUES (?, ?)");
 $query->bind_param('si', $description, $user_id); 
 $query->execute();
 
