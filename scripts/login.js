@@ -21,6 +21,11 @@ login.addEventListener("click", () => {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'logged in') {
-    
-      }})
+              window.location.href = "../pages/main.html";
+            } else {
+              console.error('Login failed:', responseData.error);
+         
+         }
+         }
+        )})
     

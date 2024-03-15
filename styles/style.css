@@ -9,7 +9,10 @@ body{
   background: linear-gradient(90deg, rgba(193,73,83,1) 0%, rgba(76,76,71,1) 100%);
   padding: 70px;
   }
-  
+.box{
+    display: flex;
+    justify-content: center;
+}
 
 h3{
     padding: 50px;

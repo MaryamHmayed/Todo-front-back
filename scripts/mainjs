@@ -1,0 +1,31 @@
+function readTasks(user_id) {
+     fetch('https://127.0.0.1/to-do-backend/Todo-front-back/back-end/read.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({ user_id: user_id })
+            })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                const tasks = data.tasks;
+                const tasksContainer = document.getElementById();
+                tasks.forEach(task => {
+                    const taskElement = document.createElement('');
+                    taskElement.innerHTML = `
+                                            <p>Description: ${task.description}</p>
+                                            `;
+                    tasksContainer.appendChild(taskElement);
+                    });
+                } else {
+                    console.log('Error: ' + data.status);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+//https://127.0.0.1/to-do-backend/Todo-front-back/back-end/create.php
+//https://127.0.0.1/to-do-backend/Todo-front-back/back-end/delete.php
+//https://127.0.0.1/to-do-backend/Todo-front-back/back-end/update.php
